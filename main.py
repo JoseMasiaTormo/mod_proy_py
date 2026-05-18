@@ -1,23 +1,24 @@
-from src.config import RAW_PATH, OUT_PATH
-from src.io import load_csv
-from src.cleaning import clean
-from src.features import build_features
-from src.utils import assert_columns
-from src.viz import plot_graph
+from src.load_csv import load_csv
+from src.cleaner import clean_dataframe
+from src.export_csv import export_csv
+from src.recommender import recommend
+from src.utils import validate_all
 
+df = load_csv("data/raw/Sales.csv")
+df_clean = clean_dataframe(df)
 
-def main():
-    df = load_csv(RAW_PATH)
-    df = clean(df)
-    df = build_features(df)
-    # assert_columns(df, ['column_1', 'column_2'])
+print("\n¿Qué quieres hacer?")
 
-    plot_graph(df)
+exportar = input("¿Exportar el archivo limpio? (s/n): ").strip().lower()
+if exportar == "s":
+    try:
+        validate_all(df_clean)
+        export_csv(df_clean, "data/processed/clean_sales.csv")
+    except AssertionError as e:
+        print(f"Error de validación, no se exportará el archivo: {e}")
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(OUT_PATH, index=False)
-    print(f"Saved: {OUT_PATH}")
-
-
-if __name__ == "__main__":
-    main()
+recomendar = input("¿Quieres una recomendación de móvil? (s/n): ").strip().lower()
+if recomendar == "s":
+    results = recommend(df_clean)
+    print(results.head())
+    
