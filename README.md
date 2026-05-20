@@ -39,9 +39,10 @@
 
 ### 7) Contenido del proyecto
 
-- `src/` contiene funciones reutilizables (`cleaner`, `export_csv`, `load_csv`, `recommender`, `utils(validation)`)
-- `main.py` ejecuta el pipeline end-to-end
-- `notebooks/graphics.ipynb` contiene los gráficos y las conclusiones de estos
+- `src/` contiene funciones reutilizables (`cleaner`, `export_csv`, `load_csv`, `recommender`, `utils(validation)`).
+- `main.py` ejecuta el pipeline end-to-end.
+- `notebooks/graphics.ipynb` contiene los gráficos y las conclusiones de estos.
+- `images/` contiene las imagenes de los plots generados en el notebook.
 
 ### 8) Cómo ejecutar
 
