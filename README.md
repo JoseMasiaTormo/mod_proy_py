@@ -130,6 +130,7 @@ mod_proy_py/
 ├── data/
 │   ├── raw/
 │   └── processed/
+├── images/
 ├── notebooks/
 │   └── eda.ipynb
 │   └── graphics.ipynb
