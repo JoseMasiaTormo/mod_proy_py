@@ -21,4 +21,3 @@ recomendar = input("¿Quieres una recomendación de móvil? (s/n): ").strip().lo
 if recomendar == "s":
     results = recommend(df_clean)
     print(results.head())
-    
