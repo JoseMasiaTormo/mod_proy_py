@@ -30,7 +30,7 @@
 
 - raw → clean → utils(validate) → export → (feature opcional) recommend
 
-### 6) Hallazgos
+### 6) Hallazgos (Q3)
 
 - Variedad de Modelos: Lo que se puede apreciar en el **Gráfico 2** es que **Samsung** lidera el mercado en variedad de modelos para poder acceder a clientes con todo tipo de bolsillo mientras que marcas como **Apple** prefieren lanzar menos modelos de forma más selectiva.
 - Precio por marca: En el **Gráfico 3** se ve claramente que **Apple** tiene una mediana de precio y distribución mucho más alta que el resto, seguido de Samsung con una gran distribución, pero el resto mantienen un perfil de gama **Media-Baja** para adecuarse a la mayoría de los bolsillos.
@@ -53,7 +53,7 @@
 
 ### 9) Visualizaciones y Conclusiones de estas
 
-## Gráfico 1 — Distribución del Rating (Q3)
+## Gráfico 1 — Distribución del Rating
 
 ![Distribución del Rating](images/01_distribucion_rating.png)
 

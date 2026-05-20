@@ -53,7 +53,7 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     numeric_cols = ["Rating", "Selling Price", "Original Price", "Discount", "discount percentage"]
     for col in numeric_cols:
         if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors="coerce")
+            df[col] = pd.to_numeric(df[col], errors="coerce").astype(float).round(2)
             
     # 7. Tratar Nulos
     # Numéricos se rellenan con 0
@@ -85,6 +85,6 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     # Recalcular discount percentage donde sea posible
     if all(c in df.columns for c in ["Discount", "Original Price", "discount percentage"]):
         mask = df["Original Price"] > 0
-        df.loc[mask, "discount percentage"] = (df.loc[mask, "Discount"] / df.loc[mask, "Original Price"] * 100).round(6)
+        df.loc[mask, "discount percentage"] = (df.loc[mask, "Discount"] / df.loc[mask, "Original Price"] * 100).round(2)
     
     return df
